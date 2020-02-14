@@ -53,5 +53,4 @@ func main() {
 	}
 	defer conn.Close()
 	downloadFile(conn, path)
-
 }
