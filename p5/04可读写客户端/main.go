@@ -17,7 +17,7 @@ func ReadMsg(conn net.Conn) {
 			fmt.Println("退出连接")
 			return
 		}
-		fmt.Println("接收到数据:", string(buf[:n]))
+		fmt.Println(string(buf[:n]))
 	}
 }
 
@@ -25,7 +25,6 @@ func ReadMsg(conn net.Conn) {
 func WriteMsg(conn net.Conn) {
 	buf := make([]byte, 512)
 	for {
-		fmt.Print("请输入发送的内容:")
 		n, err := os.Stdin.Read(buf) // 从键盘读取内容
 		if err != nil {
 			fmt.Println("os.Stdin err", err)

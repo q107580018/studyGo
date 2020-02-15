@@ -39,6 +39,7 @@ func main() {
 		fmt.Println("net.listen err:", err)
 		return
 	}
+	defer l.Close()
 	for {
 		conn, err := l.Accept()
 		if err != nil {
