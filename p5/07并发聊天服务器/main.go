@@ -86,7 +86,7 @@ func HandleConnect(conn net.Conn) {
 			return
 		case <-HasDate:
 			// 如果有数据，则会进入此处
-		case <-time.After(time.Second * 60): // 如果超过时间还没有数据，则超时退出
+		case <-time.After(5e9): // 如果超过时间还没有数据，则超时退出
 			delete(OnlineMap, cliAddr) // 当前用户从map移除
 			Message <- MakeMsg(cli.Name, cliAddr, "time out leave")
 			fmt.Println(MakeMsg(cli.Name, cliAddr, "time out leave"))
