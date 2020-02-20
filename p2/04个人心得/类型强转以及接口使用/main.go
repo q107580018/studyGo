@@ -2,13 +2,13 @@ package main
 
 import "fmt"
 
-type MyFunc func(int)
+type MyFunc func(int) // MyFunc函数实现了print方法,兼容MyInterface
 
 func (m MyFunc) Print(a int) {
 	m(a)
 }
 
-func aFun(a int) {
+func aFun(a int) { // 原函数没有实现print方法，不兼容MyInterface
 	fmt.Println(a)
 }
 
