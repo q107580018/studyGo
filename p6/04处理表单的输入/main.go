@@ -5,17 +5,10 @@ import (
 	"html/template"
 	"log"
 	"net/http"
-	"strings"
 )
 
 func SayHello(w http.ResponseWriter, r *http.Request) {
-	r.ParseForm() // 解析参数，默认不解析
-	for k, v := range r.Form {
-		fmt.Println("key:", k)
-		fmt.Println("val:", strings.Join(v, ""))
-	}
-	w.Write([]byte(`
-<html>
+	tmpl, err := template.New("go-web").Parse(`<html>
 <head>
 	<title>首页</title>
 </head>
@@ -24,7 +17,12 @@ func SayHello(w http.ResponseWriter, r *http.Request) {
 	<a href="/login">登陆</a>
 </body>
 </html>
-	`))
+	`)
+	if err != nil {
+		fmt.Println("temp.Parse failed,", err)
+		return
+	}
+	tmpl.Execute(w, nil)
 }
 
 func Login(w http.ResponseWriter, r *http.Request) {
