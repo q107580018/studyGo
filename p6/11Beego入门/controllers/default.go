@@ -7,7 +7,7 @@ import (
 
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
-	"github.com/q107580018/studyGo/p6/10Beego入门/models"
+	"github.com/q107580018/studyGo/p6/11Beego入门/models"
 )
 
 type MainController struct {

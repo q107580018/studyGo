@@ -29,7 +29,6 @@ package main
 
 import (
 	"fmt"
-	"strings"
 )
 
 func main() {
@@ -51,6 +50,5 @@ func gcdOfStrings(str1 string, str2 string) string {
 			return string(x)
 		}
 	}
-	strings.Index()
 	return string(x)
 }
