@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/q107580018/studyGo/p7/15_小清单项目/model"
+	"github.com/q107580018/studyGo/p7/15_small_list/model"
 )
 
 func IndexHandler(c *gin.Context) {
