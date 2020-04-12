@@ -1,4 +1,4 @@
-module 16CookieSession
+module studyGo/p7/16cookie
 
 go 1.14
 

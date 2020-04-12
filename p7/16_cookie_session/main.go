@@ -17,7 +17,7 @@ func main() {
 			"data": "home",
 		})
 	})
-	r.Run()
+	_ = r.Run()
 }
 
 func CheckCookie(c *gin.Context) {
